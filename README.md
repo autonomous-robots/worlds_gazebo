@@ -46,3 +46,9 @@ cp -r models/autonomous_robots_world_2 ~/../../opt/ros/humble/share/turtlebot3_g
 ```
 cp launch/turtlebot3_world.launch.py ~/../../opt/ros/humble/share/turtlebot3_gazebo/launch/
 ```
+
+8º
+
+```
+pip install -r requirements.sdf
+```
