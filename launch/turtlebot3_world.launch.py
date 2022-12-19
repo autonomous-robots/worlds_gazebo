@@ -76,7 +76,7 @@ def generate_launch_description():
     launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
-    world = randint.randint(1, 2)
+    world = random.randint(1, 2)
 
     path_sdf_model = f"~/../../opt/ros/humble/share/turtlebot3_gazebo/models/autonomous_robots_world_{world}/model.sdf"
     path_sdf_model = os.path.expanduser(path_sdf_model)
