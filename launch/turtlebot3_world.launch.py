@@ -141,8 +141,8 @@ def generate_launch_description():
             os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
         ),
         launch_arguments={
-            'x_pose': x_pose,
-            'y_pose': y_pose
+            'x_pose': f'{pose[0]}',
+            'y_pose': f'{pose[1]}',
         }.items()
     )
 
