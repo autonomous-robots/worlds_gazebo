@@ -76,9 +76,9 @@ def generate_launch_description():
     launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
-    world = random.randint(1, 2)
+    world = random.randint(1, 4)
 
-    path_sdf_model = f"~/../../opt/ros/humble/share/turtlebot3_gazebo/models/autonomous_robots_world_{world}/model.sdf"
+    path_sdf_model = f"~/../../opt/ros/humble/share/turtlebot3_gazebo/models/g2w{world}/model.sdf"
     path_sdf_model = os.path.expanduser(path_sdf_model)
     selectRandomPose = SelectRandomPose(sdl_path = path_sdf_model, 
                                 min_x = -1.3,
@@ -95,26 +95,30 @@ def generate_launch_description():
     y_pose = LaunchConfiguration('y_pose', default=f'{pose[1]}')
    
 
-    
-
-    if world == 0:
+    if world == 1:    
         world = os.path.join(
             get_package_share_directory('turtlebot3_gazebo'),
             'worlds',
-            'turtlebot3_world.world'
-        )
-    elif world == 1:    
-        world = os.path.join(
-            get_package_share_directory('turtlebot3_gazebo'),
-            'worlds',
-            'autonomous_robots_world_1.world'
+            'g2w1.world'
         )    
     elif world == 2:    
         world = os.path.join(
             get_package_share_directory('turtlebot3_gazebo'),
             'worlds',
-            'autonomous_robots_world_2.world'
-        )          
+            'g2w2.world'
+        )     
+    elif world == 3:    
+        world = os.path.join(
+            get_package_share_directory('turtlebot3_gazebo'),
+            'worlds',
+            'g2w3.world'
+        )        
+    elif world == 4:    
+        world = os.path.join(
+            get_package_share_directory('turtlebot3_gazebo'),
+            'worlds',
+            'g2w4.world'
+        )               
 
     gzserver_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(

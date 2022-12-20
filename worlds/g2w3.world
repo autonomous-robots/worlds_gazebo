@@ -46,7 +46,7 @@
     <model name="turtlebot3_world">
       <static>1</static>
       <include>
-        <uri>model://autonomous_robots_world_2</uri>
+        <uri>model://g2w3</uri>
       </include>
     </model>
 
