@@ -21,38 +21,38 @@ cd worlds_gazebo
 #### 3º
 
 ```
-cp worlds/autonomous_robots_world_1.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
+cp worlds/g2w1.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
+cp worlds/g2w2.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
+cp worlds/g2w3.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
+cp worlds/g2w4.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
 
 ```
 
 #### 4º
 
 ```
-cp worlds/autonomous_robots_world_2.world ~/../../opt/ros/humble/share/turtlebot3_gazebo/worlds/
+cp -r models/g2w1 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
+cp -r models/g2w2 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
+cp -r models/g2w3 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
+cp -r models/g2w4 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
 
 ```
 
 #### 5º
 
 ```
-cp -r models/autonomous_robots_world_1 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
+cp launch/turtlebot3_world.launch.py ~/../../opt/ros/humble/share/turtlebot3_gazebo/launch/
 
 ```
 
 #### 6º
 
 ```
-cp -r models/autonomous_robots_world_2 ~/../../opt/ros/humble/share/turtlebot3_gazebo/models/
+pip install -r requirements.sdf
 ```
 
 #### 7º
 
 ```
-cp launch/turtlebot3_world.launch.py ~/../../opt/ros/humble/share/turtlebot3_gazebo/launch/
-```
-
-#### 8º
-
-```
-pip install -r requirements.sdf
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
